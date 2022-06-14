@@ -3,7 +3,7 @@ local used_science = {}
 for _, tech in pairs(data.raw["technology"]) do
     if tech.max_level and tech.max_level == "infinite" then
         for _, ingredient in ipairs(tech.unit.ingredients) do
-            if ingredient[1] ~= "space-science-pack" then
+            if ingredient[1] ~= "space-science-pack" and not string.starts_with(ingredient[1], "se-") then
                 ingredient[1] = "infused-" .. ingredient[1]
                 used_science[ingredient[1]] = true
             end

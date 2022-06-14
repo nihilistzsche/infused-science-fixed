@@ -18,11 +18,6 @@ for i, infusedScience in ipairs(infusedSciencePacks) do
     local scienceName = infusedScience.name
     infusedScience.name = "infused-" .. scienceName
     
-    if infusedScience.localised_name then
-        infusedScience.localised_name = infusedScience.localised_name .. " - Infused"
-    else
-        infusedScience.localised_name = {"item-name.infused", {"item-name." .. scienceName}} 
-    end
     infusedScience.order = "z[" .. i .. infusedScience.name .. "]"
     
     local infusedOverlay = nil
