@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+  Info:
+    - Updated for 1.1
+  Compatibility:
+    - Added support for Krastorio2 tech cards.
+	- Added support for 248k exotic science pack.
+	- If Space Exploration is installed, its science packs will be ignored.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2020.11.02
   Info:
