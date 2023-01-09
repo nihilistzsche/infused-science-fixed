@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+  Info:
+    - Added support for infusing SciencePackGalore and Space Exploration science packs, and redid
+	  how supported science packs are detected to make it easier to add support for new types in
+	  the future.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Info:
     - Updated for 1.1

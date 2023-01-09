@@ -4,7 +4,7 @@ data:extend({
         name = "is-use-alt-overlay",
         setting_type = "startup",
         default_value = "Never",
-        allowed_values = {"Never", "Modded only", "Always"},
-        order = "a-a"  
+        allowed_values = { "Never", "Modded only", "Always" },
+        order = "a-a",
     },
 })
