@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+  Info:
+    - Added support for "planetary-data" from Expanded Rocket Payloads (continued).
+---------------------------------------------------------------------------------------------------
 Version: 1.1.2
   Info:
     - Added support for infusing SciencePackGalore and Space Exploration science packs, and redid

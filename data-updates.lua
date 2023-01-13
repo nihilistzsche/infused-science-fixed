@@ -20,6 +20,8 @@ local suffixes = {
     ["-science-pack-4"] = true,
     ["-tech-card"] = true,
     ["_science_item"] = true,
+    ["planetary-data"] = true,
+    ["station-science"] = true,
 }
 
 local function has_valid_suffix(name, suffix) return name:sub(-string.len(suffix)) == suffix end
