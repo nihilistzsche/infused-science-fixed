@@ -64,12 +64,16 @@ for i, infusedScience in ipairs(infusedSciencePacks) do
         infusedOverlay = "__infused-science-fixed__/graphics/icons/infused_alt.png"
     end
 
-    infusedScience.icons = {
-        { icon = infusedScience.icon, icon_size = infusedScience.icon_size },
-        { icon = infusedOverlay, icon_size = 64 },
-    }
-    infusedScience.icon = nil
-    infusedScience.icon_size = nil
+    if infusedScience.icons then
+        table.insert(infusedScience.icons, { icon = infusedOverlay, icon_size = 64 })
+    else
+        infusedScience.icons = {
+            { icon = infusedScience.icon, icon_size = infusedScience.icon_size },
+            { icon = infusedOverlay, icon_size = 64 },
+        }
+        infusedScience.icon = nil
+        infusedScience.icon_size = nil
+    end
 
     data:extend({
         infusedScience,
