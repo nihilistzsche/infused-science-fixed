@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.6
+  Info:
+    - Changed the Science Pack Galore dependency to SciencePackGaloreForked.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+  Info:
+    - Fixed the remote interface for Milestones.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.4
   Info:
     - Added a remote interface to register the infused science packs with Milestones.
