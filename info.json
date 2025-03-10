@@ -1,16 +1,13 @@
 {
   "name": "infused-science-fixed",
-  "version": "1.1.6",
+  "version": "1.1.8",
   "title": "Infused Science (Fixed)",
   "author": "Jakzie, nihilistzsche",
   "description": "Adds an infused version of every (even modded) science pack, which every infinite technology will require. Infused versions are made by combining the original with space science pack and some raw resources. This increases complexity and cost of endgame research. Inspired by More Science mod.",
-  "factorio_version": "1.1",
+  "factorio_version": "2.0",
   "dependencies": [
-    "base >= 1.1",
-    "?Krastorio2",
-    "?space-exploration",
-    "?AlienSpaceScience >= 1.0.0",
-	"?SciencePackGaloreForked",
+    "base >= 2.0.32",
+    "? space-age",
     "!MoreScience"
   ]
 }

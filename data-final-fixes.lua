@@ -3,7 +3,8 @@ local used_science = {}
 for _, tech in pairs(data.raw["technology"]) do
     if tech.max_level and tech.max_level == "infinite" then
         for _, ingredient in ipairs(tech.unit.ingredients) do
-            if ingredient[1] ~= "space-science-pack" and ingredient[1]:sub(1,3) ~= "se-" then
+            if ingredient[1]:sub(1, string.len("infused-")) ~= "infused-" then
+                log("Updating "..ingredient[1].." to be infused")
                 ingredient[1] = "infused-" .. ingredient[1]
                 used_science[ingredient[1]] = true
             end
@@ -20,6 +21,7 @@ for scienceName, _ in pairs(data.raw["tool"]) do
                 { type = "unlock-recipe", recipe = scienceName }
             )
             table.insert(data.raw["lab"]["is-infusion-lab"].inputs, scienceName)
+            table.insert(data.raw["lab"]["is-infusion-biolab"].inputs, scienceName)
         else
             data.raw["tool"][scienceName] = nil
             data.raw["recipe"][scienceName] = nil

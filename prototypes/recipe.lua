@@ -55,34 +55,58 @@ local infusionLab = {
     name = "is-infusion-lab",
     category = "crafting-with-fluid",
     energy_required = 10,
-    result = "is-infusion-lab",
+    results = {
+        { type = "item", name = "is-infusion-lab", amount = 1 }
+    },
     enabled = false,
 }
 
 if mods["one-more-tier"] and data.raw["item"]["omt-lab"] then
     infusionLab.ingredients = {
-        { "processing-unit", 6 },
-        { "electronic-circuit", 35 },
-        { "iron-gear-wheel", 70 },
-        { "express-transport-belt", 14 },
-        { "low-density-structure", 40 },
-        { "omt-lab", 1 },
+        { type = "item", name = "processing-unit", amount = 6 },
+        { type = "item", name = "electronic-circuit", amount = 35 },
+        { type = "item", name = "iron-gear-wheel", amount = 70 },
+        { type = "item", name = "express-transport-belt", amount = 14 },
+        { type = "item", name = "low-density-structure", amount = 40 },
+        { type = "item", name = "omt-lab", amount = 1 },
         { type = "fluid", name = "is-infusion-fluid", amount = 100 },
     }
 else
     infusionLab.ingredients = {
-        { "processing-unit", 10 },
-        { "electronic-circuit", 50 },
-        { "iron-gear-wheel", 100 },
-        { "express-transport-belt", 20 },
-        { "low-density-structure", 50 },
-        { "lab", 1 },
+        { type = "item", name = "processing-unit", amount = 10 },
+        { type = "item", name = "electronic-circuit", amount = 50 },
+        { type = "item", name = "iron-gear-wheel", amount = 100 },
+        { type = "item", name = "express-transport-belt", amount = 20 },
+        { type = "item", name = "low-density-structure", amount = 50 },
+        { type = "item", name = "lab", amount = 1 },
         { type = "fluid", name = "is-infusion-fluid", amount = 100 },
     }
 end
 
 data:extend({ infusionLab })
 
+if mods["space-age"] then
+    local infusionBiolab = {
+        type = "recipe",
+        name = "is-infusion-biolab",
+        category = "crafting-with-fluid",
+        energy_required = 10,
+        ingredients = {
+            { type = "item", name = "holmium-plate", amount = 10 },
+            { type = "item", name = "jelly", amount = 20 },
+            { type = "item", name = "quantum-processor", amount = 20 },
+            { type = "item", name = "turbo-transport-belt", amount = 5 },
+            { type = "item", name = "tungsten-plate", amount = 10 },
+            { type = "item", name = "biolab", amount = 1 },
+            { type = "fluid", name = "is-infusion-fluid", amount = 200 },
+        },
+        results = {
+            { type = "item", name = "is-infusion-biolab", amount = 1 }
+        },
+        enabled = false,
+    }
+    data:extend({ infusionBiolab })
+end
 if mods["AlienSpaceScience"] then
     data:extend({
         {

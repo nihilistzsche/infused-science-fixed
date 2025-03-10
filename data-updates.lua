@@ -1,34 +1,33 @@
-local vanillaScienceNames = { "automation", "logistic", "military", "chemical", "production", "utility" }
+local vanillaScienceNames = { "automation", "logistic", "military", "chemical", "production", "utility", "space" }
+local spaceAgeScienceNames = { "metallurgic", "electromagnetic", "agricultural", "cryogenic", "promethium" }
 local vanillaScience = {}
 for _, vanillaPack in ipairs(vanillaScienceNames) do
     vanillaScience[vanillaPack .. "-science-pack"] = true
+end
+if mods["space-age"] then
+    for _, spaceAgePack in ipairs(spaceAgeScienceNames) do
+        vanillaScience[spaceAgePack.."-science-pack"] = true
+    end
 end
 
 local infusedSciencePacks = {}
 
 local prefixes = {
-    ["sem:spg_science-pack-"] = true,
+    ["sem-spg_science-pack-"] = true,
 }
 
 local function has_valid_prefix(name, prefix) return name:sub(1, string.len(prefix)) == prefix end
 
 local suffixes = {
     ["-science-pack"] = true,
-    ["-science-pack-1"] = true,
-    ["-science-pack-2"] = true,
-    ["-science-pack-3"] = true,
-    ["-science-pack-4"] = true,
-    ["-tech-card"] = true,
-    ["_science_item"] = true,
-    ["planetary-data"] = true,
-    ["station-science"] = true,
 }
 
 local function has_valid_suffix(name, suffix) return name:sub(-string.len(suffix)) == suffix end
 
 local function is_valid_science_pack(science)
     if not science then return false end
-    if science.name == "space-science-pack" then return false end
+    if science.name:sub(1, string.len("infused-")) == "infused-" then return false end
+    if vanillaScience[science.name] then return true end
     for prefix in pairs(prefixes) do
         if has_valid_prefix(science.name, prefix) then return true end
     end
@@ -84,25 +83,12 @@ for i, infusedScience in ipairs(infusedSciencePacks) do
             enabled = false,
             energy_required = 20,
             ingredients = {
-                { scienceName, 1 },
+                { type = "item", name = scienceName, amount = 1 },
                 { type = "fluid", name = "is-infusion-fluid", amount = 50 },
             },
-            result_count = 1,
-            result = infusedScience.name,
+            results = {
+                { type = "item", name = infusedScience.name, amount = 1 }
+            }
         },
     })
-end
-
-if mods["AlienSpaceScience"] then
-    local tech = data.raw["technology"]["space-science-pack"]
-    for i, effect in ipairs(tech.effects) do
-        if effect.type == "unlock-recipe" and effect.recipe == "space-science-pack" then
-            table.remove(tech.effects, i)
-        end
-    end
-
-    table.insert(
-        data.raw["technology"]["is-infusion-fluid"].effects,
-        { type = "unlock-recipe", recipe = "is-infusion-fluid-artifact" }
-    )
 end

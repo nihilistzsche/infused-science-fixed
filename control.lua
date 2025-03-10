@@ -9,7 +9,7 @@ remote.add_interface("infused-science-fixed", {
             },
         }
         local tbl = ret["Infused Science (Fixed)"]
-        for _, science in pairs(game.item_prototypes) do
+        for _, science in pairs(prototypes.item) do
             if science and science.type == "tool" and science.name:sub(1, 8) == "infused-" then
                 log("Adding milestone for: " .. science.name)
                 table.insert(tbl.milestones, { type = "item", name = science.name, quantity = 1 })

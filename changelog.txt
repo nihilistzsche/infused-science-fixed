@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.8
+  Info:
+    - Updated for Factorio 2.0/Space Age.
+    - Buildings will be identical to the base building now, but with support for the infused
+      science packs and double module slots.
+    - With Space Age enabled, adds an infused biolab variant that requires all of the science
+      packs up to Aquilo, as well as resources from all of the Space Age planets
+      but comes with 8 module slots and the same performance as the biolab.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.6
   Info:
     - Changed the Science Pack Galore dependency to SciencePackGaloreForked.
@@ -20,16 +29,16 @@ Version: 1.1.3
 Version: 1.1.2
   Info:
     - Added support for infusing SciencePackGalore and Space Exploration science packs, and redid
-	  how supported science packs are detected to make it easier to add support for new types in
-	  the future.
+      how supported science packs are detected to make it easier to add support for new types in
+      the future.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Info:
     - Updated for 1.1
   Compatibility:
     - Added support for Krastorio2 tech cards.
-	- Added support for 248k exotic science pack.
-	- If Space Exploration is installed, its science packs will be ignored.
+    - Added support for 248k exotic science pack.
+    - If Space Exploration is installed, its science packs will be ignored.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 2020.11.02
